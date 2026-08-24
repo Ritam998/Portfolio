@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Ritam Das — AI & Data Science Engineer</title>
-<meta name="description" content="Portfolio of Ritam Das — AI & Data Science Student specializing in NLP,ML,FastAPI, and AWS.">
-<meta name="keywords" content="Ritam Das, AI , Data Science, NLP, Machine Learning, FastAPI, Python, Kolkata">
+<title>Ritam Das — AI & Data Science Student</title>
+<meta name="description" content="Portfolio of Ritam Das — AI & Data Science Engineer specializing in NLP, Transformers, FastAPI, and AWS.">
+<meta name="keywords" content="Ritam Das, AI Engineer, Data Science, NLP, Machine Learning, FastAPI, Python, Kolkata">
 <meta name="theme-color" content="#020409">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
@@ -71,6 +71,14 @@ body{
   #cursor, #cursor-ring { display: none !important; }
 }
 
+/* ── CANVAS ───────────────────────────── */
+#bg-canvas{
+  position:fixed;top:0;left:0;
+  width:100%;height:100%;
+  z-index:0;pointer-events:none;
+}
+
+/* ── NAV (Laptop & Mobile Responsive) ── */
 nav{
   position:fixed;top:0;left:0;right:0;
   z-index:100;
@@ -81,7 +89,7 @@ nav{
   backdrop-filter:blur(0px);
 }
 nav.scrolled{
-  background:rgba(2,4,9,.9);
+  background:rgba(2,4,9,.92);
   border-bottom-color:var(--border);
   backdrop-filter:blur(20px);
   padding:0.9rem 4rem;
@@ -184,63 +192,67 @@ nav.scrolled{
   text-align:center;
 }
 
-/* ── HERO ─────────────────────────────── */
+/* ── HERO (Clean Top Alignment, No Awkward Gaps) ── */
 #hero{
   position:relative;z-index:1;
-  min-height:100vh;
+  min-height:92vh;
   display:flex;flex-direction:column;
-  justify-content:center;
-  padding:6.5rem 4rem 3rem 4rem;
+  justify-content:flex-start;
+  padding:9.5rem 4rem 4rem 4rem;
+  max-width:1300px;
+  margin:0 auto;
 }
 .hero-tag{
   font-family:'Space Mono',monospace;
-  font-size:.75rem;color:var(--accent2);
+  font-size:.78rem;color:var(--accent2);
   letter-spacing:.15em;text-transform:uppercase;
-  margin-bottom:1.5rem;
-  opacity:0;animation:fadeUp .8s .3s forwards;
+  margin-bottom:1.2rem;
+  opacity:1;
 }
 .hero-name{
   font-family:'Syne',sans-serif;
-  font-size:clamp(3.2rem,8.5vw,7.5rem);
+  font-size:clamp(3.2rem,7.5vw,6.5rem);
   font-weight:800;
-  line-height:.95;
+  line-height:.98;
   letter-spacing:-.03em;
-  margin-bottom:1.2rem;
-  opacity:0;animation:fadeUp .8s .5s forwards;
+  margin-bottom:1.4rem;
+  opacity:1;
 }
 .hero-name .line1{
   display:block;
-  background:linear-gradient(135deg,#ffffff 0%,#94a3b8 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:#ffffff;
+  background:linear-gradient(135deg,#ffffff 0%,#cbd5e1 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 .hero-name .line2{
   display:block;
+  color:var(--accent2);
   background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 50%,var(--accent3) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 .hero-desc{
-  max-width:580px;
-  font-size:clamp(1rem, 2vw, 1.15rem);
+  max-width:620px;
+  font-size:clamp(1.05rem, 1.8vw, 1.2rem);
   font-weight:300;
   color:var(--text2);
-  line-height:1.75;
+  line-height:1.8;
   margin-bottom:2.5rem;
-  opacity:0;animation:fadeUp .8s .7s forwards;
+  opacity:1;
 }
 .hero-desc strong{color:var(--text);font-weight:500}
 
 .hero-actions{
-  display:flex;gap:1rem;align-items:center;flex-wrap:wrap;
-  opacity:0;animation:fadeUp .8s .9s forwards;
-  margin-bottom:2rem;
+  display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;
+  opacity:1;
+  margin-bottom:3.5rem;
 }
 
 .btn-primary{
   font-family:'Space Mono',monospace;
-  font-size:.8rem;letter-spacing:.06em;
-  padding:.85rem 1.8rem;
+  font-size:.82rem;letter-spacing:.06em;
+  padding:.9rem 2rem;
   background:var(--accent);color:#fff;
   border:none;border-radius:4px;
   text-decoration:none;display:inline-flex;
@@ -252,8 +264,8 @@ nav.scrolled{
 /* ── RESUME BUTTON ── */
 .btn-resume{
   font-family:'Space Mono',monospace;
-  font-size:.8rem;letter-spacing:.06em;
-  padding:.85rem 1.8rem;
+  font-size:.82rem;letter-spacing:.06em;
+  padding:.9rem 2rem;
   background:rgba(6,182,212,.12);
   color:var(--accent2);
   border:1px solid rgba(6,182,212,.4);
@@ -269,8 +281,8 @@ nav.scrolled{
 
 .btn-ghost{
   font-family:'Space Mono',monospace;
-  font-size:.8rem;letter-spacing:.06em;
-  padding:.85rem 1.8rem;
+  font-size:.82rem;letter-spacing:.06em;
+  padding:.9rem 2rem;
   background:transparent;color:var(--text2);
   border:1px solid var(--border2);border-radius:4px;
   text-decoration:none;display:inline-flex;
@@ -279,10 +291,13 @@ nav.scrolled{
 }
 .btn-ghost:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px)}
 
+.hero-meta-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:auto;padding-top:1.5rem;border-top:1px solid rgba(26,45,74,.4);
+}
+
 .hero-scroll{
-  position:relative;margin-top:1.5rem;
   display:flex;align-items:center;gap:1rem;
-  opacity:0;animation:fadeUp .8s 1.2s forwards;
 }
 .scroll-line{
   width:50px;height:1px;background:var(--border2);
@@ -299,24 +314,23 @@ nav.scrolled{
 }
 .scroll-text{
   font-family:'Space Mono',monospace;
-  font-size:.65rem;color:var(--text3);
+  font-size:.68rem;color:var(--text3);
   letter-spacing:.12em;text-transform:uppercase;
 }
 
 .hero-coords{
-  position:absolute;right:4rem;bottom:2.5rem;
   font-family:'Space Mono',monospace;
-  font-size:.65rem;color:var(--text3);
-  letter-spacing:.08em;
-  opacity:0;animation:fadeUp .8s 1.4s forwards;
-  text-align:right;line-height:1.8;
+  font-size:.68rem;color:var(--text3);
+  letter-spacing:.08em;text-align:right;line-height:1.6;
 }
 
 /* ── SECTION BASE ─────────────────────── */
 section{position:relative;z-index:1;padding:7rem 4rem}
+.sec-container{max-width:1300px;margin:0 auto}
+
 .sec-label{
   font-family:'Space Mono',monospace;
-  font-size:.7rem;color:var(--accent2);
+  font-size:.72rem;color:var(--accent2);
   letter-spacing:.2em;text-transform:uppercase;
   margin-bottom:1rem;
   display:flex;align-items:center;gap:1rem;
@@ -331,7 +345,7 @@ section{position:relative;z-index:1;padding:7rem 4rem}
   letter-spacing:-.02em;margin-bottom:1rem;
 }
 .sec-sub{
-  font-size:1rem;color:var(--text2);
+  font-size:1.02rem;color:var(--text2);
   font-weight:300;max-width:540px;
   line-height:1.7;margin-bottom:3.5rem;
 }
@@ -637,13 +651,9 @@ footer{
   font-size:.7rem;color:var(--text3);letter-spacing:.06em;
 }
 
-/* ── ANIMATIONS ───────────────────────── */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(24px)}
-  to{opacity:1;transform:translateY(0)}
-}
+/* ── SCROLL REVEAL ────────────────────── */
 .reveal{
-  opacity:0;transform:translateY(30px);
+  opacity:0;transform:translateY(25px);
   transition:opacity .7s,transform .7s cubic-bezier(.16,1,.3,1);
 }
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -658,13 +668,16 @@ footer{
   background-size:80px 80px;
 }
 
+/* ═════════════════════════════════════════════════════════════════
+   LAPTOP, TABLET & MOBILE RESPONSIVE MEDIA QUERIES
+   ═════════════════════════════════════════════════════════════════ */
 
 /* Tablet & Smaller Laptops (< 1024px) */
 @media (max-width: 1024px) {
   nav { padding: 1.2rem 2.5rem; }
   nav.scrolled { padding: 0.8rem 2.5rem; }
   section { padding: 6rem 2.5rem; }
-  #hero { padding: 6rem 2.5rem 3rem 2.5rem; }
+  #hero { padding: 8rem 2.5rem 3rem 2.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
   .certs-grid { grid-template-columns: 1fr; }
   footer { padding: 2rem 2.5rem; }
@@ -679,17 +692,18 @@ footer{
   .nav-status { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
   
   section { padding: 4.5rem 1.2rem; }
-  #hero { padding: 5.5rem 1.2rem 2.5rem 1.2rem; min-height: calc(100vh - 40px); }
+  #hero { padding: 6rem 1.2rem 2.5rem 1.2rem; min-height: auto; }
   
-  .hero-tag { font-size: 0.68rem; margin-bottom: 1rem; }
-  .hero-name { font-size: clamp(2.8rem, 12vw, 4.5rem); margin-bottom: 1rem; }
-  .hero-desc { font-size: 0.95rem; line-height: 1.65; margin-bottom: 2rem; }
+  .hero-tag { font-size: 0.68rem; margin-bottom: 0.8rem; }
+  .hero-name { font-size: clamp(2.6rem, 11vw, 4.2rem); margin-bottom: 1rem; }
+  .hero-desc { font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.8rem; }
   
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     gap: 0.8rem;
+    margin-bottom: 2rem;
   }
   .btn-primary, .btn-resume, .btn-ghost {
     width: 100%;
@@ -698,7 +712,7 @@ footer{
   }
   
   .hero-coords { display: none; }
-  .hero-scroll { margin-top: 2rem; }
+  .hero-meta-bar { border-top: none; padding-top: 0; }
   
   .sec-title { font-size: 1.85rem; }
   .sec-sub { font-size: 0.9rem; margin-bottom: 2.5rem; }
@@ -740,7 +754,7 @@ footer{
 
 /* Small Phones (< 400px) */
 @media (max-width: 400px) {
-  .hero-name { font-size: 2.5rem; }
+  .hero-name { font-size: 2.4rem; }
   .about-stats { grid-template-columns: 1fr; }
 }
 </style>
@@ -805,7 +819,7 @@ footer{
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-tag">// Data Science & AI Student— Kolkata, India</div>
+  <div class="hero-tag">// Data Science & AI Student — Kolkata, India</div>
   <h1 class="hero-name">
     <span class="line1">Ritam</span>
     <span class="line2">Das</span>
@@ -834,90 +848,94 @@ footer{
     <a href="#contact" class="btn-ghost">Get in Touch</a>
   </div>
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll to explore</span>
-  </div>
-  
-  <div class="hero-coords">
-    22.5726° N, 88.3639° E<br>
-    <span style="color:var(--accent2)">Kolkata, West Bengal</span>
+  <div class="hero-meta-bar">
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
+    
+    <div class="hero-coords">
+      22.5726° N, 88.3639° E<br>
+      <span style="color:var(--accent2)">Kolkata, West Bengal</span>
+    </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="sec-label">01 — About</div>
-  <div class="about-grid">
-    <div class="about-left">
-      <h2 class="sec-title reveal">Who I Am</h2>
-      <p class="sec-sub reveal" style="max-width:100%">
-        Data Science undergrad specializing in NLP and AI-driven systems.
-        I build end-to-end intelligent applications — from fine-tuning
-        transformer models to wiring them into production APIs on AWS.
-        Currently building effective solutions for high-impact real world problems.
-      </p>
-      
-      <div class="exp-section reveal">
-        <div class="exp-item">
-          <div>
-            <div class="exp-role">Python Developer Intern</div>
-            <div class="exp-company">Codec Technologies India · AICTE & ICAC Approved</div>
+  <div class="sec-container">
+    <div class="sec-label">01 — About</div>
+    <div class="about-grid">
+      <div class="about-left">
+        <h2 class="sec-title reveal">Who I Am</h2>
+        <p class="sec-sub reveal" style="max-width:100%">
+          Data Science undergrad specializing in NLP and AI-driven systems.
+          I build end-to-end intelligent applications — from fine-tuning
+          transformer models to wiring them into production APIs on AWS.
+          Currently building effective solutions for high-impact real world problems.
+        </p>
+        
+        <div class="exp-section reveal">
+          <div class="exp-item">
+            <div>
+              <div class="exp-role">Python Developer Intern</div>
+              <div class="exp-company">Codec Technologies India · AICTE & ICAC Approved</div>
+            </div>
+            <div class="exp-date">2024</div>
           </div>
-          <div class="exp-date">2024</div>
+          <div class="exp-item">
+            <div>
+              <div class="exp-role">Bachelor in Data Science</div>
+              <div class="exp-company">Institute of Advanced Education & Research, Kolkata</div>
+            </div>
+            <div class="exp-date">2024 – 2028</div>
+          </div>
         </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-role">Bachelor in Data Science</div>
-            <div class="exp-company">Institute of Advanced Education & Research, Kolkata</div>
+
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">AI Projects Shipped</div>
           </div>
-          <div class="exp-date">2024 – 2028</div>
+          <div class="stat-card">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Industry Certifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">8.0</div>
+            <div class="stat-label">CGPA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Lines of Intent</div>
+          </div>
         </div>
       </div>
 
-      <div class="about-stats reveal">
-        <div class="stat-card">
-          <div class="stat-num">4+</div>
-          <div class="stat-label">AI Projects Shipped</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Industry Certifications</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">8.0</div>
-          <div class="stat-label">CGPA</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">∞</div>
-          <div class="stat-label">Lines of Intent</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="about-right reveal">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <div class="t-dot r"></div>
-          <div class="t-dot y"></div>
-          <div class="t-dot g"></div>
-          <span class="terminal-title">ritam@portfolio ~ profile.json</span>
-        </div>
-        <div class="terminal-body">
-          <div><span class="t-prompt">$ </span><span class="t-cmd">cat profile.json</span></div>
-          <div style="margin-top:.5rem">{</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Ritam Das"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Data Science / ML Engineer"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"Kolkata, India"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"focus"</span>: [</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"NLP"</span>, <span class="t-val">"FastAPI"</span>, <span class="t-val">"Flask"</span>,</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"DistilBERT"</span>, <span class="t-val">"AWS"</span></div>
-          <div>&nbsp;&nbsp;],</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"email"</span>: <span class="t-val">"ritamdas965@gmail.com"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"phone"</span>: <span class="t-val">"+91 8777672300"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val">"open_to_opportunities"</span></div>
-          <div>}</div>
-          <div style="margin-top:.5rem"><span class="t-prompt">$ </span><span class="t-cursor"></span></div>
+      <div class="about-right reveal">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="t-dot r"></div>
+            <div class="t-dot y"></div>
+            <div class="t-dot g"></div>
+            <span class="terminal-title">ritam@portfolio ~ profile.json</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-prompt">$ </span><span class="t-cmd">cat profile.json</span></div>
+            <div style="margin-top:.5rem">{</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Ritam Das"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Data Science / ML Engineer"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"Kolkata, India"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"focus"</span>: [</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"NLP"</span>, <span class="t-val">"FastAPI"</span>, <span class="t-val">"Flask"</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"DistilBERT"</span>, <span class="t-val">"AWS"</span></div>
+            <div>&nbsp;&nbsp;],</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"email"</span>: <span class="t-val">"ritamdas965@gmail.com"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"phone"</span>: <span class="t-val">"+91 8777672300"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val">"open_to_opportunities"</span></div>
+            <div>}</div>
+            <div style="margin-top:.5rem"><span class="t-prompt">$ </span><span class="t-cursor"></span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -926,56 +944,58 @@ footer{
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="sec-label reveal">02 — Skills</div>
-  <h2 class="sec-title reveal">Technical Arsenal</h2>
-  <p class="sec-sub reveal">The stack I use to build things that matter.</p>
-  <div class="skills-grid">
-    <div class="skill-card reveal">
-      <div class="skill-icon">⚡</div>
-      <div class="skill-name">Languages</div>
-      <div class="skill-tags">
-        <span class="tag">Python</span><span class="tag">C</span><span class="tag">SQL</span>
+  <div class="sec-container">
+    <div class="sec-label reveal">02 — Skills</div>
+    <h2 class="sec-title reveal">Technical Arsenal</h2>
+    <p class="sec-sub reveal">The stack I use to build things that matter.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">C</span><span class="tag">SQL</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">⚙️</div>
-      <div class="skill-name">Backend & APIs</div>
-      <div class="skill-tags">
-        <span class="tag">FastAPI</span><span class="tag">Flask</span>
-        <span class="tag">REST API</span><span class="tag">Streamlit</span>
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Backend & APIs</div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span><span class="tag">Flask</span>
+          <span class="tag">REST API</span><span class="tag">Streamlit</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">🧠</div>
-      <div class="skill-name">ML & NLP</div>
-      <div class="skill-tags">
-        <span class="tag">DistilBERT</span><span class="tag">MiniLM</span>
-        <span class="tag">LangChain</span><span class="tag">NLTK</span><span class="tag">TextBlob</span>
-        <span class="tag">Machine Learning</span><span class="tag">Statistics</span>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-name">ML & NLP</div>
+        <div class="skill-tags">
+          <span class="tag">DistilBERT</span><span class="tag">MiniLM</span>
+          <span class="tag">LangChain</span><span class="tag">NLTK</span><span class="tag">TextBlob</span>
+          <span class="tag">Machine Learning</span><span class="tag">Statistics</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">🗄️</div>
-      <div class="skill-name">Databases</div>
-      <div class="skill-tags">
-        <span class="tag">MongoDB</span><span class="tag">MySQL</span>
-        <span class="tag">PostgreSQL</span><span class="tag">Supabase</span><span class="tag">SQLite</span>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">Databases</div>
+        <div class="skill-tags">
+          <span class="tag">MongoDB</span><span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Supabase</span><span class="tag">SQLite</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">☁️</div>
-      <div class="skill-name">Cloud & DevOps</div>
-      <div class="skill-tags">
-        <span class="tag">AWS EC2</span><span class="tag">S3</span>
-        <span class="tag">RDS</span><span class="tag">SageMaker</span><span class="tag">Lambda</span><span class="tag">Vercel</span>
+      <div class="skill-card reveal">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Cloud & DevOps</div>
+        <div class="skill-tags">
+          <span class="tag">AWS EC2</span><span class="tag">S3</span>
+          <span class="tag">RDS</span><span class="tag">SageMaker</span><span class="tag">Lambda</span><span class="tag">Vercel</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">📊</div>
-      <div class="skill-name">Data & Viz</div>
-      <div class="skill-tags">
-        <span class="tag">Pandas</span><span class="tag">NumPy</span>
-        <span class="tag">Power BI</span><span class="tag">Git</span>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Data & Viz</div>
+        <div class="skill-tags">
+          <span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">Power BI</span><span class="tag">Git</span>
+        </div>
       </div>
     </div>
   </div>
@@ -983,193 +1003,199 @@ footer{
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="sec-label reveal">03 — Projects</div>
-  <h2 class="sec-title reveal">Selected Work</h2>
-  <p class="sec-sub reveal">End-to-end systems built from idea to deployment.</p>
-  <div class="projects-list">
+  <div class="sec-container">
+    <div class="sec-label reveal">03 — Projects</div>
+    <h2 class="sec-title reveal">Selected Work</h2>
+    <p class="sec-sub reveal">End-to-end systems built from idea to deployment.</p>
+    <div class="projects-list">
 
-    <!-- PROJECT 1: RAYZA -->
-    <div class="project-item reveal">
-      <div class="project-num">01</div>
-      <div class="project-content">
-        <div class="project-badges">
-          <span class="badge badge-blue">NLP</span>
-          <span class="badge badge-cyan">FastAPI</span>
-          <span class="badge badge-purple">DistilBERT</span>
-          <span class="badge badge-gold">AWS</span>
+      <!-- PROJECT 1: RAYZA -->
+      <div class="project-item reveal">
+        <div class="project-num">01</div>
+        <div class="project-content">
+          <div class="project-badges">
+            <span class="badge badge-blue">NLP</span>
+            <span class="badge badge-cyan">FastAPI</span>
+            <span class="badge badge-purple">DistilBERT</span>
+            <span class="badge badge-gold">AWS</span>
+          </div>
+          <div class="project-title">RAYZA — AI Mental Health Crisis Detection</div>
+          <div class="project-desc">
+            Hybrid AI crisis detection engine combining EMA-based behavioral baseline modeling,
+            DistilBERT valence classification, and MiniLM semantic similarity into a 0–100
+            composite risk score. FastAPI backend with MongoDB + MySQL, AWS-ready architecture
+            (EC2, S3, SageMaker, Lambda).
+          </div>
+          <div class="project-tech">
+            <span class="tag">FastAPI</span><span class="tag">MongoDB</span>
+            <span class="tag">DistilBERT</span><span class="tag">MiniLM</span>
+            <span class="tag">MySQL</span><span class="tag">AWS</span><span class="tag">EMA Modeling</span>
+          </div>
         </div>
-        <div class="project-title">RAYZA — AI Mental Health Crisis Detection</div>
-        <div class="project-desc">
-          Hybrid AI crisis detection engine combining EMA-based behavioral baseline modeling,
-          DistilBERT valence classification, and MiniLM semantic similarity into a 0–100
-          composite risk score. FastAPI backend with MongoDB + MySQL, AWS-ready architecture
-          (EC2, S3, SageMaker, Lambda).
-        </div>
-        <div class="project-tech">
-          <span class="tag">FastAPI</span><span class="tag">MongoDB</span>
-          <span class="tag">DistilBERT</span><span class="tag">MiniLM</span>
-          <span class="tag">MySQL</span><span class="tag">AWS</span><span class="tag">EMA Modeling</span>
+        <div class="project-actions-group">
+          <a href="https://github.com/Ritam998/RAYZA-A-Digital-Psychological-Support-System-for-Students" target="_blank" rel="noopener noreferrer" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Project
+          </a>
         </div>
       </div>
-      <div class="project-actions-group">
-        <a href="https://github.com/Ritam998/RAYZA-A-Digital-Psychological-Support-System-for-Students" target="_blank" rel="noopener noreferrer" class="project-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Project
-        </a>
+
+      <!-- PROJECT 2: VakilAI -->
+      <div class="project-item reveal">
+        <div class="project-num">02</div>
+        <div class="project-content">
+          <div class="project-badges">
+            <span class="badge badge-gold">FastAPI</span>
+            <span class="badge badge-cyan">Claude AI</span>
+            <span class="badge badge-purple">LangChain</span>
+            <span class="badge badge-blue">Supabase</span>
+          </div>
+          <div class="project-title">VakilAI — AI-Powered Legal Document Analyzer</div>
+          <div class="project-desc">
+            Full-stack AI legal platform analyzing contracts, deeds, and court notices. Explains complex legal jargon in plain language with multi-language Indian support and real-time clause risk detection.
+          </div>
+          <div class="project-tech">
+            <span class="tag">FastAPI</span><span class="tag">Claude AI</span>
+            <span class="tag">LangChain</span><span class="tag">PyMuPDF</span>
+            <span class="tag">Supabase</span><span class="tag">JWT Auth</span><span class="tag">Vercel</span>
+          </div>
+        </div>
+        <div class="project-actions-group">
+          <a href="https://vakilai-henna.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Live Demo ↗
+          </a>
+          <a href="https://github.com/Ritam998/vakilai" target="_blank" rel="noopener noreferrer" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Source
+          </a>
+        </div>
       </div>
+
+      <!-- PROJECT 3: JARVIS AI -->
+      <div class="project-item reveal">
+        <div class="project-num">03</div>
+        <div class="project-content">
+          <div class="project-badges">
+            <span class="badge badge-blue">Python</span>
+            <span class="badge badge-cyan">NLP</span>
+            <span class="badge badge-purple">Voice AI</span>
+          </div>
+          <div class="project-title">Jarvis AI — Voice-Enabled NLP Assistant</div>
+          <div class="project-desc">
+            Voice-enabled intelligent assistant built in Python with real-time speech recognition,
+            NLP-based intent classification, and dynamic backend response logic.
+          </div>
+          <div class="project-tech">
+            <span class="tag">Python</span><span class="tag">Speech Recognition</span>
+            <span class="tag">NLP</span><span class="tag">Intent Processing</span><span class="tag">Backend Logic</span>
+          </div>
+        </div>
+        <div class="project-actions-group">
+          <a href="https://github.com/Ritam998/JARVIS-AI" target="_blank" rel="noopener noreferrer" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Sentiment Chatbot -->
+      <div class="project-item reveal">
+        <div class="project-num">04</div>
+        <div class="project-content">
+          <div class="project-badges">
+            <span class="badge badge-blue">Flask</span>
+            <span class="badge badge-cyan">REST API</span>
+            <span class="badge badge-gold">NLTK</span>
+          </div>
+          <div class="project-title">Sentiment Chatbot — Flask NLP Web App</div>
+          <div class="project-desc">
+            Python-Flask web application with REST API backend performing real-time sentiment
+            detection (positive / negative / neutral) using NLTK and TextBlob NLP pipelines.
+          </div>
+          <div class="project-tech">
+            <span class="tag">Flask</span><span class="tag">NLTK</span>
+            <span class="tag">TextBlob</span><span class="tag">REST API</span><span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="project-actions-group">
+          <a href="https://github.com/Ritam998/Sentiment-Chatbot" target="_blank" rel="noopener noreferrer" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Project
+          </a>
+        </div>
+      </div>
+
     </div>
-
-    <!-- PROJECT 2: VakilAI -->
-    <div class="project-item reveal">
-      <div class="project-num">02</div>
-      <div class="project-content">
-        <div class="project-badges">
-          <span class="badge badge-gold">FastAPI</span>
-          <span class="badge badge-cyan">Claude AI</span>
-          <span class="badge badge-purple">LangChain</span>
-          <span class="badge badge-blue">Supabase</span>
-        </div>
-        <div class="project-title">VakilAI — AI-Powered Legal Document Analyzer</div>
-        <div class="project-desc">
-          Full-stack AI legal platform analyzing contracts, deeds, and court notices. Explains complex legal jargon in plain language with multi-language Indian support and real-time clause risk detection.
-        </div>
-        <div class="project-tech">
-          <span class="tag">FastAPI</span><span class="tag">Claude AI</span>
-          <span class="tag">LangChain</span><span class="tag">PyMuPDF</span>
-          <span class="tag">Supabase</span><span class="tag">JWT Auth</span><span class="tag">Vercel</span>
-        </div>
-      </div>
-      <div class="project-actions-group">
-        <a href="https://vakilai-henna.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Live Demo ↗
-        </a>
-        <a href="https://github.com/Ritam998/vakilai" target="_blank" rel="noopener noreferrer" class="project-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Source
-        </a>
-      </div>
-    </div>
-
-    <!-- PROJECT 3: JARVIS AI -->
-    <div class="project-item reveal">
-      <div class="project-num">03</div>
-      <div class="project-content">
-        <div class="project-badges">
-          <span class="badge badge-blue">Python</span>
-          <span class="badge badge-cyan">NLP</span>
-          <span class="badge badge-purple">Voice AI</span>
-        </div>
-        <div class="project-title">Jarvis AI — Voice-Enabled NLP Assistant</div>
-        <div class="project-desc">
-          Voice-enabled intelligent assistant built in Python with real-time speech recognition,
-          NLP-based intent classification, and dynamic backend response logic.
-        </div>
-        <div class="project-tech">
-          <span class="tag">Python</span><span class="tag">Speech Recognition</span>
-          <span class="tag">NLP</span><span class="tag">Intent Processing</span><span class="tag">Backend Logic</span>
-        </div>
-      </div>
-      <div class="project-actions-group">
-        <a href="https://github.com/Ritam998/JARVIS-AI" target="_blank" rel="noopener noreferrer" class="project-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Project
-        </a>
-      </div>
-    </div>
-
-    <!-- PROJECT 4: Sentiment Chatbot -->
-    <div class="project-item reveal">
-      <div class="project-num">04</div>
-      <div class="project-content">
-        <div class="project-badges">
-          <span class="badge badge-blue">Flask</span>
-          <span class="badge badge-cyan">REST API</span>
-          <span class="badge badge-gold">NLTK</span>
-        </div>
-        <div class="project-title">Sentiment Chatbot — Flask NLP Web App</div>
-        <div class="project-desc">
-          Python-Flask web application with REST API backend performing real-time sentiment
-          detection (positive / negative / neutral) using NLTK and TextBlob NLP pipelines.
-        </div>
-        <div class="project-tech">
-          <span class="tag">Flask</span><span class="tag">NLTK</span>
-          <span class="tag">TextBlob</span><span class="tag">REST API</span><span class="tag">Python</span>
-        </div>
-      </div>
-      <div class="project-actions-group">
-        <a href="https://github.com/Ritam998/Sentiment-Chatbot" target="_blank" rel="noopener noreferrer" class="project-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Project
-        </a>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- CERTS -->
 <section id="certs">
-  <div class="sec-label reveal">04 — Certifications</div>
-  <h2 class="sec-title reveal">Industry Recognition</h2>
-  <p class="sec-sub reveal">Certified by the world's leading tech organisations. Click to verify on LinkedIn.</p>
-  <div class="certs-grid">
-    
-    <!-- Oracle -->
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7366829459208921089/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
-      <div class="cert-icon oracle">OCI</div>
-      <div>
-        <div class="cert-name">Oracle Cloud Infrastructure</div>
-        <div class="cert-issuer">Certified Data Science Professional · Oracle ↗</div>
-      </div>
-    </a>
+  <div class="sec-container">
+    <div class="sec-label reveal">04 — Certifications</div>
+    <h2 class="sec-title reveal">Industry Recognition</h2>
+    <p class="sec-sub reveal">Certified by the world's leading tech organisations. Click to verify on LinkedIn.</p>
+    <div class="certs-grid">
+      
+      <!-- Oracle -->
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7366829459208921089/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
+        <div class="cert-icon oracle">OCI</div>
+        <div>
+          <div class="cert-name">Oracle Cloud Infrastructure</div>
+          <div class="cert-issuer">Certified Data Science Professional · Oracle ↗</div>
+        </div>
+      </a>
 
-    <!-- IBM -->
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403793235124338688/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
-      <div class="cert-icon ibm">IBM</div>
-      <div>
-        <div class="cert-name">Machine Learning for Data Science</div>
-        <div class="cert-issuer">Professional Certificate · IBM ↗</div>
-      </div>
-    </a>
+      <!-- IBM -->
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403793235124338688/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
+        <div class="cert-icon ibm">IBM</div>
+        <div>
+          <div class="cert-name">Machine Learning for Data Science</div>
+          <div class="cert-issuer">Professional Certificate · IBM ↗</div>
+        </div>
+      </a>
 
-    <!-- Deloitte -->
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7349500145752838144/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
-      <div class="cert-icon del">DEL</div>
-      <div>
-        <div class="cert-name">Data Analytics Job Simulation</div>
-        <div class="cert-issuer">Industry Simulation · Deloitte ↗</div>
-      </div>
-    </a>
+      <!-- Deloitte -->
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7349500145752838144/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
+        <div class="cert-icon del">DEL</div>
+        <div>
+          <div class="cert-name">Data Analytics Job Simulation</div>
+          <div class="cert-issuer">Industry Simulation · Deloitte ↗</div>
+        </div>
+      </a>
 
-    <!-- TATA -->
-    <a href="https://www.linkedin.com/posts/ritam-das-1bb093357_completion-certificate-as-data-analytics-activity-7349836755895791616-h55M/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
-      <div class="cert-icon tata">TAT</div>
-      <div>
-        <div class="cert-name">Data Analytics at GenAI</div>
-        <div class="cert-issuer">Programme Certificate · TATA Group ↗</div>
-      </div>
-    </a>
+      <!-- TATA -->
+      <a href="https://www.linkedin.com/posts/ritam-das-1bb093357_completion-certificate-as-data-analytics-activity-7349836755895791616-h55M/" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
+        <div class="cert-icon tata">TAT</div>
+        <div>
+          <div class="cert-name">Data Analytics at GenAI</div>
+          <div class="cert-issuer">Programme Certificate · TATA Group ↗</div>
+        </div>
+      </a>
 
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-inner">
-    <div class="sec-label reveal" style="justify-content:center">05 — Contact</div>
-    <h2 class="sec-title reveal">Let's Build Something</h2>
-    <p class="sec-sub reveal" style="margin:0 auto 0 auto;text-align:center">
-      Open to Data Science, ML Engineering, and Python Backend roles.
-      Always interested in projects at the edge of AI and real-world impact.
-    </p>
-    <a href="mailto:ritamdas965@gmail.com" class="contact-email reveal">
-      ritamdas965@gmail.com
-    </a>
-    <div class="contact-links reveal">
-      <a href="https://github.com/Ritam998" target="_blank" rel="noopener noreferrer" class="social-link">GitHub (Ritam998)</a>
-      <a href="https://www.linkedin.com/in/ritam-das-1bb093357/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-      <a href="tel:+918777672300" class="social-link">+91 8777672300</a>
+  <div class="sec-container">
+    <div class="contact-inner">
+      <div class="sec-label reveal" style="justify-content:center">05 — Contact</div>
+      <h2 class="sec-title reveal">Let's Build Something</h2>
+      <p class="sec-sub reveal" style="margin:0 auto 0 auto;text-align:center">
+        Open to Data Science, ML Engineering, and Python Backend roles.
+        Always interested in projects at the edge of AI and real-world impact.
+      </p>
+      <a href="mailto:ritamdas965@gmail.com" class="contact-email reveal">
+        ritamdas965@gmail.com
+      </a>
+      <div class="contact-links reveal">
+        <a href="https://github.com/Ritam998" target="_blank" rel="noopener noreferrer" class="social-link">GitHub (Ritam998)</a>
+        <a href="https://www.linkedin.com/in/ritam-das-1bb093357/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+        <a href="tel:+918777672300" class="social-link">+91 8777672300</a>
+      </div>
     </div>
   </div>
 </section>
