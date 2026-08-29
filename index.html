@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#020409">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
-<!-- Google Fonts -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -47,7 +47,6 @@ body{
   line-height:1.6;
 }
 
-/* ── CUSTOM CURSOR (Only Active on Desktop Mouse Devices) ── */
 @media (hover: hover) and (pointer: fine) {
   body { cursor: none; }
   a, button, input { cursor: none; }
@@ -71,14 +70,14 @@ body{
   #cursor, #cursor-ring { display: none !important; }
 }
 
-/* ── CANVAS ───────────────────────────── */
+
 #bg-canvas{
   position:fixed;top:0;left:0;
   width:100%;height:100%;
   z-index:0;pointer-events:none;
 }
 
-/* ── NAV (Laptop & Mobile Responsive) ── */
+
 nav{
   position:fixed;top:0;left:0;right:0;
   z-index:100;
@@ -138,7 +137,7 @@ nav.scrolled{
   50%{opacity:.5;transform:scale(.8)}
 }
 
-/* Mobile Hamburger Toggle */
+
 .hamburger{
   display:none;
   flex-direction:column;
@@ -162,7 +161,7 @@ nav.scrolled{
   transform:translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Drawer Menu */
+
 .mobile-drawer{
   position:fixed;top:0;left:0;right:0;bottom:0;
   background:rgba(2,4,9,.97);
@@ -192,7 +191,7 @@ nav.scrolled{
   text-align:center;
 }
 
-/* ── HERO (Clean Top Alignment, No Awkward Gaps) ── */
+
 #hero{
   position:relative;z-index:1;
   min-height:92vh;
@@ -425,7 +424,7 @@ section{position:relative;z-index:1;padding:7rem 4rem}
 }
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 
-/* ── EXPERIENCE ── */
+
 .exp-section{margin-top:2.5rem}
 .exp-item{
   padding:1.2rem 0;
@@ -449,7 +448,6 @@ section{position:relative;z-index:1;padding:7rem 4rem}
   margin-top:.3rem;
 }
 
-/* ── SKILLS ───────────────────────────── */
 #skills{background:var(--bg)}
 .skills-grid{
   display:grid;
@@ -494,7 +492,7 @@ section{position:relative;z-index:1;padding:7rem 4rem}
 }
 .tag:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ── PROJECTS ─────────────────────────── */
+
 #projects{background:var(--surface)}
 .projects-list{display:flex;flex-direction:column;gap:0}
 .project-item{
@@ -603,7 +601,6 @@ section{position:relative;z-index:1;padding:7rem 4rem}
 }
 .cert-card:hover .cert-issuer{color:var(--accent2)}
 
-/* ── CONTACT ──────────────────────────── */
 #contact{
   background:var(--surface);
   text-align:center;
@@ -638,7 +635,7 @@ section{position:relative;z-index:1;padding:7rem 4rem}
 }
 .social-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
-/* ── FOOTER ───────────────────────────── */
+
 footer{
   background:var(--bg);
   border-top:1px solid var(--border);
@@ -651,14 +648,14 @@ footer{
   font-size:.7rem;color:var(--text3);letter-spacing:.06em;
 }
 
-/* ── SCROLL REVEAL ────────────────────── */
+
 .reveal{
   opacity:0;transform:translateY(25px);
   transition:opacity .7s,transform .7s cubic-bezier(.16,1,.3,1);
 }
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ── GRID OVERLAY ─────────────────────── */
+
 .grid-overlay{
   position:fixed;inset:0;z-index:0;
   pointer-events:none;opacity:.025;
@@ -668,11 +665,7 @@ footer{
   background-size:80px 80px;
 }
 
-/* ═════════════════════════════════════════════════════════════════
-   LAPTOP, TABLET & MOBILE RESPONSIVE MEDIA QUERIES
-   ═════════════════════════════════════════════════════════════════ */
 
-/* Tablet & Smaller Laptops (< 1024px) */
 @media (max-width: 1024px) {
   nav { padding: 1.2rem 2.5rem; }
   nav.scrolled { padding: 0.8rem 2.5rem; }
@@ -683,7 +676,6 @@ footer{
   footer { padding: 2rem 2.5rem; }
 }
 
-/* Mobile Devices & Phones (< 768px) */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.4rem; }
   nav.scrolled { padding: 0.8rem 1.4rem; }
@@ -752,7 +744,7 @@ footer{
   }
 }
 
-/* Small Phones (< 400px) */
+
 @media (max-width: 400px) {
   .hero-name { font-size: 2.4rem; }
   .about-stats { grid-template-columns: 1fr; }
@@ -761,11 +753,11 @@ footer{
 </head>
 <body>
 
-<!-- Custom Cursor Elements -->
+
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- Background Canvas & Grid -->
+
 <canvas id="bg-canvas"></canvas>
 <div class="grid-overlay"></div>
 
@@ -831,11 +823,10 @@ footer{
     <strong>things that think</strong>.
   </p>
   
-  <!-- HERO ACTIONS (Touch-friendly & Desktop-friendly) -->
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">View Projects</a>
     
-    <!-- Direct Download Resume Button -->
+   
     <a href="resume.pdf" download="Ritam_Das_Resume.pdf" target="_blank" class="btn-resume">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -861,7 +852,7 @@ footer{
   </div>
 </section>
 
-<!-- ABOUT -->
+
 <section id="about">
   <div class="sec-container">
     <div class="sec-label">01 — About</div>
@@ -1200,14 +1191,14 @@ footer{
   </div>
 </section>
 
-<!-- FOOTER -->
+
 <footer>
   <div class="footer-l">© 2026 Ritam Das · Built with intent</div>
   <div class="footer-r">Kolkata, West Bengal, India · 22.5726°N</div>
 </footer>
 
 <script>
-// ── MOBILE MENU TOGGLE ──
+
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileDrawer = document.getElementById('mobile-drawer');
 const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -1228,7 +1219,6 @@ if (hamburgerBtn && mobileDrawer) {
   });
 }
 
-// ── CUSTOM CURSOR ENGINE ──
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1263,7 +1253,6 @@ if (cur && ring && window.matchMedia('(hover: hover) and (pointer: fine)').match
   });
 }
 
-// ── NAVBAR SCROLL OBSERVER ──
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
 });
@@ -1334,7 +1323,7 @@ function animate() {
 }
 animate();
 
-// ── SKILL CARD HOVER ──
+
 document.querySelectorAll('.skill-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
@@ -1343,7 +1332,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
   });
 });
 
-// ── SCROLL REVEAL ──
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
